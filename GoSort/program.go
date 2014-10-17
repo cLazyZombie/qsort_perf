@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
-	"runtime"
 	"sort"
 	"time"
 )
@@ -33,8 +32,6 @@ func main() {
 	builtin := flag.Bool("builtin", false, "")
 	flag.Parse()
 
-	fmt.Printf("flags: threeway=%t, builtin=%t\n", *threeway, *builtin)
-
 	iter := 12
 	trim := 1
 	elapsed := make(sort.IntSlice, iter)
@@ -56,10 +53,6 @@ func main() {
 
 	mean := float64(sum) / float64(iter-trim*2)
 	fmt.Printf("%f ms elapsed\n", mean)
-
-	var memStats runtime.MemStats
-	runtime.ReadMemStats(&memStats)
-	fmt.Printf("max allocated: %d bytes\n", memStats.TotalAlloc)
 }
 
 func run(a Int32Slice, seed int64, threeway bool, builtin bool) (int, error) {
