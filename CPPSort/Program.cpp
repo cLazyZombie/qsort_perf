@@ -39,7 +39,7 @@ int main(size_t argc, char *argv[])
 		}
 		sort(elapsed, elapsed + iter);
 		clock_t sum = 0;
-		for (size_t i = trim; i < iter - trim * 2; i++)
+		for (size_t i = trim; i < iter - trim; i++)
 		{
 			sum += elapsed[i];
 		}

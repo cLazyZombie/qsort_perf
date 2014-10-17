@@ -73,3 +73,15 @@ echo|set /p=[Node.js 3-way]
 node .\JSSort\program.js threeway
 echo|set /p=[Node.js Built-in] 
 node .\JSSort\program.js builtin
+
+echo.
+
+
+rem GoLang
+
+echo|set /p=[Golang] 
+go run .\GoSort\program.go
+echo|set /p=[Golang 3-way]
+go run .\GoSort\program.go -threeway=true 
+echo|set /p=[Golang Built-in] 
+go run .\GoSort\program.go -builtin=true
